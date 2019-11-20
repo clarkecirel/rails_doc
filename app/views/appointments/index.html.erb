@@ -1,0 +1,21 @@
+<%= button_to 'Log Out', destroy_patient_session_path, method: :delete %>
+<h1>Patient Appointments</h1>
+
+<h2> Welcome, <%= current_patient.first_name %></h2>
+<hr />
+
+<h3> Current Appointments </h3>
+
+<%= link_to 'Make New Appointment', new_doctor_appointment_path(:doctor_id) %>
+
+<ul>
+  <% @appointments.each do |a| %>
+  <li>
+    <%= a.type %></li>
+  <li>
+    <%= a.date %></li>
+  </li>
+    <%= a.time %></li>
+  
+<% end %>
+</ul>
